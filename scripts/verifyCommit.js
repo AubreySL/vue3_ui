@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: songlin
  * @Date: 2022-06-15 15:09:46
- * @LastEditTime: 2022-06-15 15:09:47
+ * @LastEditTime: 2022-06-16 10:17:19
  * @LastEditors: songlin
  */
 // Invoked on the commit-msg git hook by yorkie.
@@ -14,9 +14,9 @@ const msg = require('fs')
   .trim()
 
 const commitRE = /^(revert: )?(feat|fix|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release)(\(.+\))?: .{1,50}/
+console.log(123)
 
 if (!commitRE.test(msg)) {
-  console.log()
   console.error(
     `  ${chalk.bgRed.white(' ERROR ')} ${chalk.red(
       `invalid commit message format.`
