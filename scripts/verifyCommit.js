@@ -1,19 +1,21 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: songlin
  * @Date: 2022-06-15 15:09:46
- * @LastEditTime: 2022-06-16 10:17:19
+ * @LastEditTime: 2022-06-16 11:04:39
  * @LastEditors: songlin
  */
 // Invoked on the commit-msg git hook by yorkie.
-
-const chalk = require('chalk')
+console.log('start')
+// const chalk = require('chalk')
 const msgPath = process.env.GIT_PARAMS
-const msg = require('fs')
-  .readFileSync(msgPath, 'utf-8')
-  .trim()
+console.log(process.env.GIT_PARAMS)
+console.log(process.env)
 
-const commitRE = /^(revert: )?(feat|fix|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release)(\(.+\))?: .{1,50}/
+const msg = require('fs').readFileSync(msgPath, 'utf-8').trim()
+
+const commitRE =
+  /^(revert: )?(feat|fix|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release)(\(.+\))?: .{1,50}/
 console.log(123)
 
 if (!commitRE.test(msg)) {
