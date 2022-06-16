@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "test": "node scripts/verifyCommit.js"
   },
   "dependencies": {
     "vue": "^3.2.25"
@@ -13,10 +15,10 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
     "chalk": "^5.0.1",
+    "husky": "^8.0.1",
     "lint-staged": "^13.0.1",
     "prettier": "^2.7.0",
-    "vite": "^2.9.9",
-    "yorkie": "^2.0.0"
+    "vite": "^2.9.9"
   },
   "gitHooks": {
     "pre-commit": "lint-staged",
