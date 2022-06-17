@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: songlin
  * @Date: 2022-06-15 15:28:54
- * @LastEditTime: 2022-06-16 17:06:02
+ * @LastEditTime: 2022-06-17 16:44:24
  * @LastEditors: songlin
 -->
 <template>
@@ -16,10 +16,12 @@
   </el-select>
   {{value}}
   <button ref="btnRef" @click="onclick" >{{value}}</button>
+  <slot></slot>  
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useFetch } from '../../util/common/fetch';
 const value = ref('')
 
 const options = [
@@ -52,6 +54,8 @@ function onclick(e){
   console.log(e);
   console.log(btnRef.value);
 }
+const res = useFetch('https://developer.mozilla.org/api/v1/whoami');
+console.log(res);
 </script>
 
 <style lang="scss" scoped></style>
